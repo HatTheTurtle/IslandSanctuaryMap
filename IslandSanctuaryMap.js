@@ -20,7 +20,7 @@ var fish = L.icon ({
     iconSize: [40,40]
 })
 
-//Add markers
+//Add markers for each gathering node
 var agavePlant1 = L.marker ([12.9, 27.7]),
     agavePlant2 = L.marker ([13.6, 25.4]),
     agavePlant3 = L.marker ([12.9, 28.2]),
@@ -433,6 +433,7 @@ var wildPopoto1 = L.marker ([16.0, 25.0]),
     wildPopoto19 = L.marker ([31.1, 12.9]),
     wildPopoto20 = L.marker ([31.5, 13.2])
 
+//Group individual nodes
 var agavePlants = L.layerGroup ([agavePlant1,agavePlant2,agavePlant3,agavePlant4,agavePlant5,agavePlant6,agavePlant7,
     agavePlant8,agavePlant9,agavePlant10,agavePlant11,agavePlant12,agavePlant13,agavePlant14,agavePlant15,agavePlant16,
     agavePlant17,agavePlant18,agavePlant19,agavePlant20,agavePlant21,agavePlant22,agavePlant23,agavePlant24,agavePlant25,
@@ -646,13 +647,43 @@ wildPopotos.eachLayer(function(layer) {
     }
 });
 
-var islewortNodes = L.layerGroup (agavePlants.getLayers().concat(cottonPlants));
+//Layer groups for materials obtained from multiple different nodes
+var islandLogNodes = L.layerGroup ([tualongTrees, mahoganyTrees]);
+var islandSandNodes = L.layerGroup ([moundsOfDirt, submergedSands]);
+//TODO: Island Stones needs to add compositeRocks, stalagmites, and yellowishRocks nodes when they're implemented
+var islandStoneNodes = L.layerGroup ([bluishRocks, smoothWhiteRocks, roughBlackRocks, speckledRocks, quartzFormations, crystalBandedRocks]);
+var islandVineNodes = L.layerGroup ([islandAppleTrees, sugarcanes]);
+var islewortNodes = L.layerGroup ([agavePlants, cottonPlants, wildParsnips, wildPopotos]);
 
 
 
+//init map
+var map = L.map('map', {
+    crs: L.CRS.Simple,
+    minZoom: 4,
+    maxZoom: 7,
+    attributionControl: false
+});
 
+/*The in-game coordinates start at 1,1 as the northwest-most corner, for some reason.
+Leaflet uses y,x coordinates starting from the bottom left, so Y coordinates will
+need to be flipped and incremented by 1 (e.g., the coordinate for the Coral Sands
+pin is x30.0, y24.0, so the Leafleft equivalent is y[42-24+1=19.0], x30.0*/
+var bounds = [[1,1], [42,42]];
+map.fitBounds(bounds);
+
+//Add basemaps
+var surface = L.imageOverlay('images/surface.png', bounds);
+var cave = L.imageOverlay('images/cave.png', bounds);
+//Use surface map by default
+surface.addTo(map);
+
+//Create groups for basemaps and markers
+var baseLayers = {
+    "Surface Terrain": surface,
+    "Cave System": cave
+};
 var overlayMaps = {
-    "Island Materials": agavePlants,
     "Island Apple": islandAppleTrees,
     "Island Beehive Chip": islandAppleTrees,
     "Island Branch": tualongTrees,
@@ -668,6 +699,7 @@ var overlayMaps = {
     "Island Jellyfish": coralFormations,
     "Island Laver": seaweedTangles,
     "Island Leucogranite": speckledRocks,
+    "Island Logs": islandLogNodes,
     "Island Limestone": smoothWhiteRocks,
     "Island Marble": smoothWhiteRocks,
     "Island Mythril Ore": bluishRocks,
@@ -678,38 +710,19 @@ var overlayMaps = {
     "Island Quartz": quartzFormations,
     "Island Resin": tualongTrees,
     "Island Rock Salt": crystalBandedRocks,
+    "Island Sand": islandSandNodes,
     "Island Sap": mahoganyTrees,
     "Island Squid": seaweedTangles,
+    "Island Stone": islandStoneNodes,
     "Island Sugarcane": sugarcanes,
     "Island Tinsand": submergedSands,
+    "Island Vine": islandVineNodes,
     "Island Wood Opal": mahoganyTrees,
     "Islefish": largeShells,
     "Islewort": islewortNodes
 };
 
-//init map
-var map = L.map('map', {
-    crs: L.CRS.Simple,
-    minZoom: 4,
-    maxZoom: 7,
-    attributionControl: false
-});
-//var att = L.control.attribution({prefix: false});
-
-/*The in-game coordinates start at 1,1 as the northwest-most corner, for some reason.
-Leaflet uses y,x coordinates starting from the bottom left, so Y coordinates will
-need to be flipped and incremented by 1 (e.g., the coordinate for the Coral Sands
-pin is x30.0, y24.0, so the Leafleft equivalent is y[42-24+1=19.0], x30.0*/
-var bounds = [[1,1], [42,42]];
-var surface = L.imageOverlay('images/surface.png', bounds);
-var cave = L.imageOverlay('images/cave.png', bounds);
-var baseLayers = {
-    "Surface Terrain": surface,
-    "Cave System": cave
-};
-surface.addTo(map);
-map.fitBounds(bounds);
-
+//Add controls for selecting basemap and markers to display
 var layerControl = L.control.layers(baseLayers, overlayMaps).addTo(map);
 
 var popup = L.popup();
@@ -721,4 +734,27 @@ function onMapClick(e) {
     //     .openOn(map);
 }
 
+var activeOverlays = [];
+function onOverlayAdd(e) {
+    //console.log ("adding overlay " + e.name);
+    activeOverlays.push(e.layer);
+}
+
+function onOverlayRemove(e) {
+    //console.log ("removing overlay " + e.name);
+    const index = activeOverlays.indexOf(e.layer);
+    activeOverlays.splice(index, 1);
+    map.eachLayer (function (obj) {
+        map.removeLayer(obj);
+    });
+    //console.log(activeOverlays);
+    activeOverlays.forEach (function (obj) {
+        //if (!map.hasLayer(obj)) {
+            map.addLayer(obj);
+        //}
+    });
+}
+
 map.on('click', onMapClick);
+map.on('overlayadd', onOverlayAdd);
+map.on('overlayremove', onOverlayRemove);
