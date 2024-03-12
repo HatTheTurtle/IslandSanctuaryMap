@@ -442,6 +442,8 @@ var agavePlants = L.layerGroup ([agavePlant1,agavePlant2,agavePlant3,agavePlant4
 agavePlants.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(plant);
+        layer.bindPopup("<b>Agave Plant</b></br><ul><li id=\"islewort\">Islewort</li>" +
+        "<li id=\"hemp\">Island Hemp (Requires Islekeep's Copper Scythe, Rank 6)</li></ul>");
     }
 });
 
@@ -452,6 +454,9 @@ var bluishRocks = L.layerGroup ([bluishRock1, bluishRock2, bluishRock3, bluishRo
 bluishRocks.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(mineral);
+        layer.bindPopup("<b>Bluish Rock</b></br><ul><li id=\"stone\">Island Stone</li>" +
+        "<li id=\"copper\">Island Copper Ore (Requires Islekeep's Stone Hammer, Rank 3)</li>"+
+        "<li id=\"mythril\">Island Mythril Ore (Requires Islekeep's Steel Hammer, Rank 13)</li></ul>");
     }
 });
 
@@ -461,6 +466,8 @@ var coralFormations = L.layerGroup ([coralFormation1, coralFormation2, coralForm
 coralFormations.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(fish);
+        layer.bindPopup("<b>Coral Formation</b></br><ul><li id=\"coral\">Island Coral</li>" +
+        "<li id=\"jellyfish\">Island Jellyfish (Requires Islekeep's Bronze Gig, Rank 7)</li></ul>");
     }
 });
 
@@ -470,6 +477,8 @@ var crystalBandedRocks = L.layerGroup ([crystalBandedRock1, crystalBandedRock2, 
 crystalBandedRocks.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(mineral);
+        layer.bindPopup("<b>Crystal-banded Rock</b></br><ul><li id=\"stone\">Island Stone</li>" +
+        "<li id=\"rocksalt\">Island Rock Salt (Requires Islekeep's Stone Hammer, Rank 3)</li></ul>");
     }
 });
 
@@ -480,6 +489,8 @@ var cottonPlants = L.layerGroup ([cottonPlant1, cottonPlant2, cottonPlant3, cott
 cottonPlants.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(plant);
+        layer.bindPopup("<b>Cotton Plant</b></br><ul><li id=\"islewort\">Islewort</li>" +
+        "<li id=\"cotton\">Island Cotton Boll (Requires Islekeep's Copper Scythe, Rank 6)</li></ul>");
     }
 });
 
@@ -490,6 +501,9 @@ var islandAppleTrees = L.layerGroup ([islandAppleTree1, islandAppleTree2, island
 islandAppleTrees.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(tree);
+        layer.bindPopup("<b>Island Apple Tree</b></br><ul><li id=\"apple\">Island Apple (Requires Islekeep's Stone Hatchet)</li>" +
+        "<li id=\"vine\">Island Vine (Requires Islekeep's Stone Hatchet)</li>"+
+        "<li id=\"beehive\">Island Beehive Chip (Requires Islekeep's Iron Hatchet, Rank 9)</li></ul>");
     }
 });
 
@@ -498,6 +512,8 @@ var largeShells = L.layerGroup ([largeShell1, largeShell2, largeShell3, largeShe
 largeShells.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(fish);
+        layer.bindPopup("<b>Large Shell</b></br><ul><li id=\"clam\">Island Clam</li>" +
+        "<li id=\"islefish\">Islefish (Requires Islekeep's Bronze Gig, Rank 7)</li></ul>");
     }
 });
 
@@ -507,6 +523,7 @@ var lightlyGnawedPumpkins = L.layerGroup ([lightlyGnawedPumpkin1, lightlyGnawedP
 lightlyGnawedPumpkins.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(plant);
+        layer.bindPopup("<b>Lightly Gnawed Pumpkin</b></br><ul><li id=\"pumpkin\">Island Pumpkin Seeds</li></ul>");
     }
 });
 
@@ -517,6 +534,9 @@ var mahoganyTrees = L.layerGroup ([mahoganyTree1, mahoganyTree2, mahoganyTree3, 
 mahoganyTrees.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(tree);
+        layer.bindPopup("<b>Mahogany Tree</b></br><ul><li id=\"log\">Island Log (Requires Islekeep's Stone Hatchet)</li>" +
+        "<li id=\"sap\">Island Sap (Requires Islekeep's Stone Hatchet)</li>"+
+        "<li id=\"opal\">Island Wood Opal (Requires Islekeep's Iron Hatchet, Rank 9)</li></ul>");
     }
 });
 
@@ -527,6 +547,8 @@ var moundsOfDirt = L.layerGroup ([moundOfDirt1, moundOfDirt2, moundOfDirt3, moun
 moundsOfDirt.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(soil);
+        layer.bindPopup("<b>Mound of Dirt</b></br><ul><li id=\"sand\">Island Sand</li>" +
+        "<li id=\"clay\">Island Clay (Requires Islekeep's Shovel, Rank 5)</li></ul>");
     }
 });
 
@@ -537,6 +559,9 @@ var palmTrees = L.layerGroup ([palmTree1, palmTree2, palmTree3, palmTree4, palmT
 palmTrees.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(tree);
+        layer.bindPopup("<b>Palm Tree</b></br><ul><li id=\"leaf\">Island Palm Leaf</li>" +
+        "<li id=\"palm\">Island Palm Log (Requires Islekeep's Stone Hatchet)</li>"+
+        "<li id=\"coconut\">Island Coconut (Requires Islekeep's Iron Hatchet, Rank 9)</li></ul>");
     }
 });
 
@@ -546,6 +571,7 @@ var partiallyConsumedCabbages = L.layerGroup ([partiallyConsumedCabbage1, partia
 partiallyConsumedCabbages.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(plant);
+        layer.bindPopup("<b>Partially Consumed Cabbage</b></br><ul><li id=\"cabbage\">Island Cabbage Seeds</li></ul>");
     }
 });
 
@@ -554,6 +580,8 @@ var quartzFormations = L.layerGroup ([quartzFormation1, quartzFormation2, quartz
 quartzFormations.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(mineral);
+        layer.bindPopup("<b>Quartz Formation</b></br><ul><li id=\"stone\">Island Stone</li>" +
+        "<li id=\"quartz\">Island Quartz (Requires Islekeep's Bronze Beakaxe, Rank 8)</li></ul>");
     }
 });
 
@@ -564,6 +592,9 @@ var roughBlackRocks = L.layerGroup ([roughBlackRock1, roughBlackRock2, roughBlac
 roughBlackRocks.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(mineral);
+        layer.bindPopup("<b>Rough Black Rock</b></br><ul><li id=\"stone\">Island Stone</li>" +
+        "<li id=\"iron\">Island Iron Ore (Requires Islekeep's Bronze Beakaxe, Rank 8)</li>"+
+        "<li id=\"durium\">Island Durium Sand (Requires Islekeep's Mythril Pickaxe, Rank 17)</li></ul>");
     }
 });
 
@@ -574,6 +605,8 @@ var seaweedTangles = L.layerGroup ([seaweedTangle1, seaweedTangle2, seaweedTangl
 seaweedTangles.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(fish);
+        layer.bindPopup("<b>Seaweed Tangle</b></br><ul><li id=\"laver\">Island Laver</li>" +
+        "<li id=\"squid\">Island Squid (Requires Islekeep's Bronze Gig, Rank 7)</li></ul>");
     }
 });
 
@@ -585,6 +618,9 @@ var smoothWhiteRocks = L.layerGroup ([smoothWhiteRock1, smoothWhiteRock2, smooth
 smoothWhiteRocks.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(mineral);
+        layer.bindPopup("<b>Smooth White Rocks</b></br><ul><li id=\"stone\">Island Stone</li>" +
+        "<li id=\"limestone\">Island Limestone (Requires Islekeep's Stone Hammer, Rank 3)</li>"+
+        "<li id=\"marble\">Island Marble (Requires Islekeep's Steel Hammer, Rank 13)</li></ul>");
     }
 });
 
@@ -594,6 +630,8 @@ var speckledRocks = L.layerGroup ([speckledRock1, speckledRock2, speckledRock3, 
 speckledRocks.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(mineral);
+        layer.bindPopup("<b>Speckled Rock</b></br><ul><li id=\"stone\">Island Stone</li>" +
+        "<li id=\"leucogranite\">Island Leucogranite (Requires Islekeep's Bronze Beakaxe, Rank 8)</li></ul>");
     }
 });
 
@@ -603,6 +641,8 @@ var submergedSands = L.layerGroup ([submergedSand1, submergedSand2, submergedSan
 submergedSands.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(soil);
+        layer.bindPopup("<b>Speckled Rock</b></br><ul><li id=\"sand\">Island Sand</li>" +
+        "<li id=\"tinsand\">Island Tinsand (Requires Islekeep's Shovel, Rank 5)</li></ul>");
     }
 });
     
@@ -613,6 +653,8 @@ var sugarcanes = L.layerGroup ([sugarcane1, sugarcane2, sugarcane3, sugarcane4, 
 sugarcanes.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(plant);
+        layer.bindPopup("<b>Sugarcane</b></br><ul><li id=\"vine\">Island Vine</li>" +
+        "<li id=\"sugarcane\">Island Sugarcane (Requires Islekeep's Copper Scythe, Rank 6)</li></ul>");
     }
 });
 
@@ -624,6 +666,9 @@ var tualongTrees = L.layerGroup ([tualongTree1, tualongTree2, tualongTree3, tual
 tualongTrees.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(tree);
+        layer.bindPopup("<b>Tualong Tree</b></br><ul><li id=\"branch\">Island Branch</li>" +
+        "<li id=\"log\">Island Log (Requires Islekeep's Stone Hatchet)</li>"+
+        "<li id=\"resin\">Island Resin (Requires Islekeep's Iron Hatchet, Rank 9)</li></ul>");
     }
 });
 
@@ -634,6 +679,8 @@ var wildParsnips = L.layerGroup ([wildParsnip1, wildParsnip2, wildParsnip3, wild
 wildParsnips.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(plant);
+        layer.bindPopup("<b>Wild Parsnip</b></br><ul><li id=\"islewort\">Islewort</li>" +
+        "<li id=\"parsnip\">Island Parsnip Seeds (Requires Islekeep's Shovel, Rank 5)</li></ul>");
     }
 });
 
@@ -644,6 +691,8 @@ var wildPopotos = L.layerGroup ([wildPopoto1, wildPopoto2, wildPopoto3, wildPopo
 wildPopotos.eachLayer(function(layer) {
     if (layer instanceof L.Marker){
         layer.setIcon(plant);
+        layer.bindPopup("<b>Wild Popoto</b></br><ul><li id=\"islewort\">Islewort</li>" +
+        "<li id=\"popoto\">Island Popoto Set (Requires Islekeep's Shovel, Rank 5)</li></ul>");
     }
 });
 

@@ -481,6 +481,132 @@ svg.leaflet-image-layer.leaflet-interactive path {
 	text-align: center;
 	margin-bottom: 20px;
 	}
+ul {
+	padding-left: 0px;
+}
+li {
+	list-style: none;
+	background-position: left top;
+	background-size: 20px;
+	background-repeat: no-repeat;
+	margin: 0;
+	padding: 3px 25px;
+}
+#apple {
+	background-image: url('https://www.garlandtools.org/files/icons/item/25308.png');
+}
+#beehive {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22611.png');
+}
+#branch {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22416.png');
+}
+#cabbage {
+	background-image: url('https://www.garlandtools.org/files/icons/item/t/23703.png');
+}
+#clam {
+	background-image: url('https://www.garlandtools.org/files/icons/item/29031.png');
+}
+#clay {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22634.png');
+}
+#coconut {
+	background-image: url('https://www.garlandtools.org/files/icons/item/25323.png');
+}
+#copper {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21209.png');
+}
+#coral {
+	background-image: url('https://www.garlandtools.org/files/icons/item/29060.png');
+}
+#cotton {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21652.png');
+}
+#durium {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21242.png');
+}
+#hemp {
+	background-image: url('https://www.garlandtools.org/files/icons/item/25213.png');
+}
+#iron {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21202.png');
+}
+#islefish {
+	background-image: url('https://www.garlandtools.org/files/icons/item/29012.png');
+}
+#islewort {
+	background-image: url("https://www.garlandtools.org/files/icons/item/25010.png");
+}
+#jellyfish {
+	background-image: url('https://www.garlandtools.org/files/icons/item/29657.png');
+}
+#laver {
+	background-image: url('https://www.garlandtools.org/files/icons/item/25225.png');
+}
+#leaf {
+	background-image: url('https://www.garlandtools.org/files/icons/item/25026.png');
+}
+#leucogranite {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21251.png');
+}
+#limestone {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22615.png');
+}
+#log {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22407.png');
+}
+#marble {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21487.png');
+}
+#opal {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21228.png');
+}
+#palm {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22410.png');
+}
+#parsnip {
+	background-image: url('https://www.garlandtools.org/files/icons/item/t/23708.png');
+}
+#popoto {
+	background-image: url('https://www.garlandtools.org/files/icons/item/t/23704.png');
+}
+#pumpkin {
+	background-image: url('https://www.garlandtools.org/files/icons/item/t/23702.png');
+}
+#quartz {
+	background-image: url('https://www.garlandtools.org/files/icons/item/20019.png');
+}
+#resin {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22638.png');
+}
+#rocksalt {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22617.png');
+}
+#sand {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21464.png');
+}
+#sap {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22642.png');
+}
+#squid {
+	background-image: url('https://www.garlandtools.org/files/icons/item/29177.png');
+}
+#stone {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21451.png');
+}
+#sugarcane {
+	background-image: url('https://www.garlandtools.org/files/icons/item/22452.png');
+}
+#tinsand {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21204.png');
+}
+#vine {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21672.png');
+}
+#mythril {
+	background-image: url('https://www.garlandtools.org/files/icons/item/21208.png');
+}
+
 .leaflet-popup-content-wrapper {
 	padding: 1px;
 	text-align: left;
